@@ -1,17 +1,32 @@
-import React from 'react';
-import './Home.css';
-import ListVeiculos from '../../components/CadastroVeiculos/ListVeiculos';
+import React from "react";
+import "./Home.css";
+import ListVeiculos from "../../components/CadastroVeiculos/ListVeiculos";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 const PagesHome = () => (
-  <div className="pages-home">
-    Pagina de exibição de veiculos
-    <br />
-    <div>
-      <ListVeiculos/>
-    </div>
-    <nav>
-      <a href= "/login"> <button type="button">Sair</button> </a>
-    </nav>    
+
+  <div className="">
+    <table>
+
+      <tr>
+        <td>
+          <Header />
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <ListVeiculos />
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <Footer/>
+        </td>
+      </tr>
+    </table>
   </div>
 );
 
