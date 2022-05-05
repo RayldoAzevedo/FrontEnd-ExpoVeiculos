@@ -3,9 +3,11 @@ import './Home.css';
 
 const PagesHome = () => (
   <div className="pages-home">
-    Parabéns, você conseguiu
+    Pagina de exibição de veiculos
     <br />
-    <button type="button">Sair</button>
+    <nav>
+      <a href= "/login"> <button type="button">Sair</button> </a>
+    </nav>    
   </div>
 );
 

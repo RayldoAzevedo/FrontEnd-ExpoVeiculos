@@ -1,7 +1,6 @@
 import React, {useContext} from "react";
 import {Route, Redirect} from "react-router-dom";
-import StorageContext
- from "components/Store/Context";
+import StorageContext from "../Storage/Context";
 
 const RoutesPrivate = ({ component: Component, ...rest}) => {
 
@@ -12,7 +11,7 @@ const RoutesPrivate = ({ component: Component, ...rest}) => {
             {...rest}
             render = { () => token 
             ? <Component {...rest} />
-            : <Redirect to = "/login"/>}
+            : <Redirect from ="/" to = "/login"/>}
         />
     )
 }
