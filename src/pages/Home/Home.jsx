@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import ListVeiculos from "../../components/CadastroVeiculos/ListVeiculos";
+import ListVeiculos from "../../components/ListarVeiculos/ListVeiculos";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 

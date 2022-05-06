@@ -1,28 +1,29 @@
 import React  from "react";
+import {FaInstagram, FaGithub, FaFacebook} from 'react-icons/fa'
 
 const Footer = () => {
     return(
         <>
-        {/*  
+        
          <footer className="page-footer blue-grey darken-4">
           <div className="container">
             <div className="row">
               <div className="col m4 l2 s12">
                 <h5 className="white-text">CMP 1491</h5>
                 <p className="grey-text text-lighten-4">
-                  Responsividade com Materialize
+                  Expo Veiculos 2022
                 </p>
               </div>
               <div className="col m4 l4 s12">
                 <h5 className="white-text">Desenvolvimento</h5>
                 <p className="grey-text text-lighten-4">
-                  Rayldo Azevedo e Estevão Sampaio
+                  Rayldo Azevedo e Guilherme Barros
                 </p>
               </div>
               <div className="col m4 l2  s12">
                 <a
                   className="grey-text text-lighten-4"
-                  href="https://github.com/Rayzev/ResponsividadeMaterialize"
+                  href="https://github.com/Rayzev/FrontEnd-ExpoVeiculos"
                 >
                   <h5 className="white-text mouse">
                     Código disponível no GitHub
@@ -73,10 +74,10 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-copyright">
-            <div className="container">© 2022 Copyright Text</div>
+            <div className="container">© 2022 Copyright Expo Veiculos</div>
           </div>
         </footer>
-        */}
+        
         </>
     )
 }
