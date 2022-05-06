@@ -1,28 +1,54 @@
 import React from 'react'
+import {AiTwotoneCalendar, } from 'react-icons/ai'
+import {IoLogoModelS, } from 'react-icons/io'
+import {MdModelTraining, } from 'react-icons/md'
+import {GiMoneyStack, } from 'react-icons/gi'
+import {FaUserAstronaut, } from 'react-icons/fa'
+import { Button, CardActionArea, CardActions, Card, CardContent, CardMedia, Typography } from '@mui/material';
 
 const ListVeiculos = () =>{
         return (
             <>
                 <div className='container'>
-                    <div class="row">
-                        <div class="col s12 m6 l4">
-                            <div class="card row">
-                                        <div class="card-title blue-grey darken-1">Rafael Maverick</div>
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    
+                    <div class="row ">
+
+                        {/* CARTAO DE EXIBIÇÃO COM MATERIAL UI */}
+                        <Card sx={{ maxWidth: 345 }} className= 'grey lighten-2'>
+                            <CardActionArea>
+                                <CardMedia
+                                component="img"
+                                height="240"
+                                image="ft1.jpg"
+                                alt="expo-veiculos"
+                                className='mt-2'
+                                />
+                                <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Maverick
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+
                                     <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                                        <p><a href="#">This is a link</a></p>
+                                        <label id='sobre' className='black-text mb-4'>Carro esportivo usado na competição de 1985 em Mic - USA </label><br></br>
+                                        <div className='indigo lighten-5 p-2'>
+                                            <span class="card-title  black-text text-darken-4"><FaUserAstronaut/> Proprietário: </span><br></br>
+                                            <span class="card-title  black-text text-darken-4"><AiTwotoneCalendar/> Ano: </span><br></br>
+                                            <span class="card-title  black-text text-darken-4"><IoLogoModelS/> Modelo</span><br></br>
+                                            <span class="card-title  black-text text-darken-4"><MdModelTraining/> Marca</span><br></br>
+                                            <span class="card-title  black-text text-darken-4"><GiMoneyStack/> Valor estimado</span><br></br>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                </div>
+                                </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            <CardActions>
+                                <Button size="small" color="primary">
+                                Compartilhar
+                                </Button>
+                            </CardActions>
+                            </Card>
 
-                            </div>
-                        </div>
                     </div>
                 </div>
             </>

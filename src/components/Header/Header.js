@@ -1,18 +1,17 @@
 import React from "react";
 
 
+
 const Header = () => {
     return(
         <>       
         <nav>
-             <div className="nav-wrapper">
-               <a href="#" className="brand-logo logo-title">Materialize</a>
+             <div className="nav-wrapper teal lighten-2">
+               <spam href="#" className="brand-logo ">Expo Veículos</spam>
                <a href="#" data-target="slide" className="sidenav-trigger show-large" ><i className="material-icons">menu</i></a>
                <ul id="nav-mobile" className="right hide-on-med-and-down">
-                 <li><a href="https://pt-br.reactjs.org">React</a></li>
-                 <li><a href="https://spring.io/projects/spring-boot">Spring-Boot</a></li>
-                 <li><a href="https://materializecss.com/getting-started.html">Materialize</a></li>
-                 <li><a href="http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome">React-Materialize</a></li>
+                 <li><a href="./login">Login</a></li>
+                 <li><a href="./add">Adicionar Veículo</a></li>
                  </ul>
                </div>
            </nav>
@@ -20,7 +19,7 @@ const Header = () => {
            <ul id="slide" className="sidenav">
                <li>
                  <div className="user-view">
-                   <div className="background">
+                   <div className="">
                      <img src="bgCompScience.jpg"/>
                    </div>
                    <a href="#user"><img className="circle" src="avatar.png"/></a>
@@ -29,16 +28,14 @@ const Header = () => {
                  </div>
                </li>
    
-               <li><a href="#!"><i className="material-icons ">cloud</i><span className=''>Meu Aprendizado</span></a></li>
-               <li><a href="https://pt-br.reactjs.org">React</a></li>
-               <li><a href="https://spring.io/projects/spring-boot">Spring-Boot</a></li>
-               <li><a href="https://materializecss.com/getting-started.html">Materialize</a></li>
-               <li><a href="http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome">React-Materialize</a></li>
+               <li><a href="#!"><i className="material-icons ">cloud</i><span className=''>Expo-Veículos 2022</span></a></li>
+               <li><a href="./login">Login</a></li>
+              <li><a href="./add">Adicionar Veículo</a></li>
    
                <li><div className="divider"></div></li>
-               <li><a className="subheader">Instrutores</a></li>
+               <li><a className="subheader">Desenvolvedores</a></li>
                <li><a className="waves-effect" href="#!">Rayldo Azevedo</a></li>
-               <li><a className="waves-effect" href="#!">Estevão Sampaio</a></li>
+               <li><a className="waves-effect" href="#!">Gulherme BArros</a></li>
            </ul>
        </>
     )

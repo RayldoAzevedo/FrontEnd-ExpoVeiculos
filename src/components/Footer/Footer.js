@@ -58,6 +58,7 @@ const Footer = () => {
                         href="https://github.com/Rayzev"
                       >
                         <FaGithub className="icon-size"></FaGithub>
+                        
                       </a>
                     </li>
                     <li className="">
