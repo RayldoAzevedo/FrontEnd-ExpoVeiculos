@@ -6,8 +6,8 @@ const Header = () => {
     return(
         <>       
         <nav>
-             <div className="nav-wrapper teal lighten-2">
-               <spam href="#" className="brand-logo ">Expo Veículos</spam>
+             <div className="nav-wrapper cyan darken-4">
+               <spam href="#" className="brand-logo "><img width="150" height="150" src="logo.jpeg"/></spam>
                <a href="#" data-target="slide" className="sidenav-trigger show-large" ><i className="material-icons">menu</i></a>
                <ul id="nav-mobile" className="right hide-on-med-and-down">
                  <li><a href="./login">Login</a></li>

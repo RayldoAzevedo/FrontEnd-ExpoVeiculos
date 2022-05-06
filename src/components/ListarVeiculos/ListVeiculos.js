@@ -16,7 +16,7 @@ const ListVeiculos = () =>{
                     <div class="row ">
 
                             {/* CARTAO DE EXIBIÇÃO COM MATERIAL UI */}
-                        <div className='col s12 m6 l3'>
+                        <div className='col s12 m6 l3 mb-4'>
                             <Card sx={{ maxWidth: 400 }} className= 'grey lighten-2'>
                                 <CardActionArea>
                                     <CardMedia
@@ -55,7 +55,7 @@ const ListVeiculos = () =>{
                             </div>
 
                             {/* CARTAO DE EXIBIÇÃO COM MATERIAL UI */}
-                        <div className='col s12 m6 l3'>
+                        <div className='col s12 m6 l3 mb-4'>
                             <Card sx={{ maxWidth: 400 }} className= 'grey lighten-2'>
                                 <CardActionArea>
                                     <CardMedia
@@ -94,7 +94,7 @@ const ListVeiculos = () =>{
                             </div>
 
                             {/* CARTAO DE EXIBIÇÃO COM MATERIAL UI */}
-                        <div className='col s12 m6 l3'>
+                        <div className='col s12 m6 l3 mb-4'>
                             <Card sx={{ maxWidth: 400 }} className= 'grey lighten-2'>
                                 <CardActionArea>
                                     <CardMedia
@@ -132,7 +132,7 @@ const ListVeiculos = () =>{
                                 </Card>                            
                             </div>
                             {/* CARTAO DE EXIBIÇÃO COM MATERIAL UI */}
-                        <div className='col s12 m6 l3'>
+                        <div className='col s12 m6 l3 mb-4'>
                             <Card sx={{ maxWidth: 400 }} className= 'grey lighten-2'>
                                 <CardActionArea>
                                     <CardMedia
