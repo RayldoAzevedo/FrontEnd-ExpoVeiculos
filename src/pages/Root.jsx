@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Home from './Home/Home';
 import Login from './Login/Login';
-import Cadastro from '../components/CadastroVeiculos/Cadastro';
+import AddVeiculo from './AddVeiculo/AddVeiculo';
 import StoreProvider from '../components/Storage/Provider';
 import RoutesPrivate from '../components/Routes/Private';
 
@@ -16,7 +16,7 @@ const PagesRoot = () => (
     <StoreProvider>
       <Switch>
         <Route path="/login" component={Login} />
-        <Route path="/add" component = {Cadastro} />
+        <Route path="/add" component = {AddVeiculo} />
         <RoutesPrivate path="/" component={Home} />
       </Switch>
     </StoreProvider>
