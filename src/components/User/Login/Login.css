@@ -4,7 +4,12 @@
     width: 400px;
     margin: 0 auto;
   }
-  
+  .corpo{
+    background-image: url('/public/login5.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 650px;
+  }
   .user-login__title {
     font-size: 40px;
     color: #78c943;

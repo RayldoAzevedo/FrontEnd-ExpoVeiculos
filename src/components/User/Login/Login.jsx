@@ -43,8 +43,10 @@ const UserLogin = () => {
 
   return (
 
-    <div className="user-login">
-      <h1 className="user-login__title">Login Expo-Veículos</h1>
+    <div className="user-login corpo">
+      <div className="">
+       <h1 className="user-login__title">Expo-Veículos</h1>
+      </div>
 
       <form autoComplete="nope" onSubmit={onSubmit}>
         <div className="user-login__form-control">
