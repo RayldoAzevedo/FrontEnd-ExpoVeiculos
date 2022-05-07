@@ -1,5 +1,5 @@
 
-const VEICULO_API_BASE_URL = 'http://localhost:8080';
+const VEICULO_API_BASE_URL = 'https://api-expoveiculos.herokuapp.com/';
 
 class ApiService {
 
