@@ -10,6 +10,7 @@ import Login from './Login/Login';
 import AddVeiculo from './AddVeiculo/AddVeiculo';
 import StoreProvider from '../components/Storage/Provider';
 // import RoutesPrivate from '../components/Routes/Private';
+// 
 
 const PagesRoot = () => (
   <Router>
