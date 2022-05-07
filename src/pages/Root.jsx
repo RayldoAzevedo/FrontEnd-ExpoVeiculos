@@ -9,7 +9,7 @@ import Home from './Home/Home';
 import Login from './Login/Login';
 import AddVeiculo from './AddVeiculo/AddVeiculo';
 import StoreProvider from '../components/Storage/Provider';
-import RoutesPrivate from '../components/Routes/Private';
+// import RoutesPrivate from '../components/Routes/Private';
 
 const PagesRoot = () => (
   <Router>
@@ -17,7 +17,7 @@ const PagesRoot = () => (
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/add" component = {AddVeiculo} />
-        <RoutesPrivate path="/" component={Home} />
+        <Route path="/" component={Home} />
       </Switch>
     </StoreProvider>
   </Router>

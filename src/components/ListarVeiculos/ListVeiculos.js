@@ -43,12 +43,8 @@ const ListVeiculos = () =>{
         return (
             <div className='corpo'>
                 <div className='container'>
-                    <div class="row ">
-
-                       
-                            
-                            
-                            
+                    <div class="row ">     
+                           
                             {/* CARTAO DE EXIBIÇÃO COM MATERIAL UI */}
                             
                                 {
@@ -83,7 +79,6 @@ const ListVeiculos = () =>{
                                                     <label className='red-text'>{veiculo.valorEstimado}</label> <br></br>
                                                 </div>
                                             </div>
-
                                         </Typography>
                                         </CardContent>
                                     </CardActionArea>
