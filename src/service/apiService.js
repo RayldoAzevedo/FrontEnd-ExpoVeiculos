@@ -1,6 +1,6 @@
+import axios from "axios";
 
 const VEICULO_API_BASE_URL = 'https://api-expoveiculos.herokuapp.com';
-// const VEICULO_API_BASE_URL = 'https://localhost:8080';
 
 class ApiService {
 
@@ -9,8 +9,7 @@ class ApiService {
 * @returns{Promise<AxiosResponse<any>>}
 */
 listarVeiculos() {
-    const url = VEICULO_API_BASE_URL + '/listar-veiculos';
-    return url;
+    return axios.get(VEICULO_API_BASE_URL + '/listar-veiculos');    
 }
 
 /**
@@ -19,8 +18,7 @@ listarVeiculos() {
 * @returns{Promise<AxiosResponse<any>>}
 */
 consultarVeiculoById(veiculoId) {
-    const url = VEICULO_API_BASE_URL + '/consultar-veiculo' + veiculoId;
-    return url;
+        return axios.get(VEICULO_API_BASE_URL + '/consultar-veiculo/' + veiculoId);
 }
 
 /**
@@ -29,8 +27,8 @@ consultarVeiculoById(veiculoId) {
 * @returns{Promise<AxiosResponse<any>>}
 */
 salvarUsuario(veiculo) {
-    const url = VEICULO_API_BASE_URL + '/salvar-veiculo' + veiculo;
-    return url;
+    return axios.post(VEICULO_API_BASE_URL + '/salvar-veiculo' , veiculo);
+
 }
 
 /**
@@ -39,8 +37,7 @@ salvarUsuario(veiculo) {
 * @returns{Promise<AxiosResponse<any>>}
 */
 excluirUsuarioById(veiculoId) {
-    const url = VEICULO_API_BASE_URL + '/excluir-veiculo' + veiculoId;
-    return url;
+    return axios.delete(VEICULO_API_BASE_URL + '/excluir-veiculo/' + veiculoId);
 }
 }
 export default new ApiService()
