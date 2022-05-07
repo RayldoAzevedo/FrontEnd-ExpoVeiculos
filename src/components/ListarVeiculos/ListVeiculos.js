@@ -1,15 +1,35 @@
 import React from 'react'
-import {AiTwotoneCalendar, AiOutlineSend} from 'react-icons/ai'
+import {AiTwotoneCalendar} from 'react-icons/ai'
 import {IoLogoModelS, } from 'react-icons/io'
 import {MdModelTraining, } from 'react-icons/md'
 import {GiMoneyStack, } from 'react-icons/gi'
 import {FaUserAstronaut, } from 'react-icons/fa'
 import {FiShare, } from 'react-icons/fi'
+import { useState, useEffect } from 'react'
+import apiService from '../../service/apiService'
 
 import { Button, CardActionArea, CardActions, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import './ListVeiculos.css'
 
 const ListVeiculos = () =>{
+
+        const [ veiculo, setVeiculo] = useState([]);
+
+        useEffect(() => {
+            async function fetchVeiculo() {
+              // You can await here
+              const response = await fetch(apiService.listarVeiculos());
+              
+              const data = await response.json();
+              setVeiculo(data);
+            }
+            //chamando o metodo
+            fetchVeiculo();
+            
+          }, []);
+
+          console.log(veiculo);        
+
         return (
             <div className='corpo'>
                 <div className='container'>
@@ -35,11 +55,16 @@ const ListVeiculos = () =>{
                                         <div class="card-content">
                                             <label id='sobre' className='black-text'>Carro esportivo usado na competição de 1985  </label><br></br>
                                             <div className='indigo lighten-5 p-2'>
-                                            <FaUserAstronaut className='icon'></FaUserAstronaut><span class="card-title black-text text-darken-4"> Proprietário: </span><br></br>
-                                            <AiTwotoneCalendar className='icon'></AiTwotoneCalendar>    <span class="card-title  black-text text-darken-4"> Ano: </span><br></br>
-                                            <IoLogoModelS className='icon'></IoLogoModelS>    <span class="card-title  black-text text-darken-4"> Modelo</span><br></br>
-                                            <MdModelTraining className='icon'></MdModelTraining>    <span class="card-title  black-text text-darken-4"> Marca</span><br></br>
-                                            <GiMoneyStack className='icon'></GiMoneyStack>    <span class="card-title  black-text text-darken-4"> Valor estimado</span><br></br>
+                                            <FaUserAstronaut className='icon'></FaUserAstronaut><span class="card-title black-text text-darken-4"> Proprietário: </span>
+                                                <label className='red-text'>{veiculo[0].proprietario}</label> <br></br>
+                                                <AiTwotoneCalendar className='icon'></AiTwotoneCalendar>    <span class="card-title  black-text text-darken-4"> Ano: </span>
+                                                <label className='red-text'>{veiculo[0].ano}</label> <br></br>
+                                                <IoLogoModelS className='icon'></IoLogoModelS>    <span class="card-title  black-text text-darken-4"> Modelo: </span>
+                                                <label className='red-text'>{veiculo[0].modelo}</label> <br></br>
+                                                <MdModelTraining className='icon'></MdModelTraining>    <span class="card-title  black-text text-darken-4"> Marca: </span>
+                                                <label className='red-text'>{veiculo[0].marca}</label> <br></br>
+                                                <GiMoneyStack className='icon'></GiMoneyStack>    <span class="card-title  black-text text-darken-4"> Valor estimado: </span>
+                                                <label className='red-text'>{veiculo[0].valorEstimado}</label> <br></br>
                                             </div>
                                         </div>
 
@@ -74,11 +99,17 @@ const ListVeiculos = () =>{
                                         <div class="card-content">
                                             <label id='sobre' className='black-text'>de 1968 a 1975  </label><br></br>
                                             <div className='indigo lighten-5 p-2'>
-                                            <FaUserAstronaut className='icon'></FaUserAstronaut><span class="card-title black-text text-darken-4"> Proprietário: </span><br></br>
-                                            <AiTwotoneCalendar className='icon'></AiTwotoneCalendar>    <span class="card-title  black-text text-darken-4"> Ano: </span><br></br>
-                                            <IoLogoModelS className='icon'></IoLogoModelS>    <span class="card-title  black-text text-darken-4"> Modelo</span><br></br>
-                                            <MdModelTraining className='icon'></MdModelTraining>    <span class="card-title  black-text text-darken-4"> Marca</span><br></br>
-                                            <GiMoneyStack className='icon'></GiMoneyStack>    <span class="card-title  black-text text-darken-4"> Valor estimado</span><br></br>
+                                                <FaUserAstronaut className='icon'></FaUserAstronaut><span class="card-title black-text text-darken-4"> Proprietário: </span>
+                                                <label className='red-text'>{veiculo[1].proprietario}</label> <br></br>
+                                                <AiTwotoneCalendar className='icon'></AiTwotoneCalendar>    <span class="card-title  black-text text-darken-4"> Ano: </span>
+                                                <label className='red-text'>{veiculo[1].ano}</label> <br></br>
+                                                <IoLogoModelS className='icon'></IoLogoModelS>    <span class="card-title  black-text text-darken-4"> Modelo: </span>
+                                                <label className='red-text'>{veiculo[1].modelo}</label> <br></br>
+                                                <MdModelTraining className='icon'></MdModelTraining>    <span class="card-title  black-text text-darken-4"> Marca: </span>
+                                                <label className='red-text'>{veiculo[1].marca}</label> <br></br>
+                                                <GiMoneyStack className='icon'></GiMoneyStack>    <span class="card-title  black-text text-darken-4"> Valor estimado: </span>
+                                                <label className='red-text'>{veiculo[1].valorEstimado}</label> <br></br>
+
                                             </div>
                                         </div>
 
