@@ -66,7 +66,7 @@ const ListVeiculos = () =>{
                                         />
                                         <CardContent>
                                         <Typography gutterBottom variant="h5" component="div">
-                                            Maverick
+                                        <IoLogoModelS className='icon'></IoLogoModelS> {veiculo.modelo}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
 
@@ -77,8 +77,6 @@ const ListVeiculos = () =>{
                                                     <label className='red-text'>{veiculo.proprietario}</label> <br></br>
                                                     <AiTwotoneCalendar className='icon'></AiTwotoneCalendar>    <span class="card-title  black-text text-darken-4"> Ano: </span>
                                                     <label className='red-text'>{veiculo.ano}</label> <br></br>
-                                                    <IoLogoModelS className='icon'></IoLogoModelS>    <span class="card-title  black-text text-darken-4"> Modelo: </span>
-                                                    <label className='red-text'>{veiculo.modelo}</label> <br></br>
                                                     <MdModelTraining className='icon'></MdModelTraining>    <span class="card-title  black-text text-darken-4"> Marca: </span>
                                                     <label className='red-text'>{veiculo.marca}</label> <br></br>
                                                     <GiMoneyStack className='icon'></GiMoneyStack>    <span class="card-title  black-text text-darken-4"> Valor estimado: </span>
