@@ -41,13 +41,13 @@ const Cadastro = () => {
             id="form-veiculo"
           >
             <div className="row">
-              <div className="input-field col s12 m6 l6">
+              <div className="input-field col col-sm12 col-md-6 col-lg-l6">
                 <input id="icon_prefix" type="text" className="validate" />
                 <FaUserAstronaut className="icones"></FaUserAstronaut>
                 <label for="icon_prefix">Proprietário</label>
               </div>
 
-              <div className="input-field col s12 m6 l6">
+              <div className="input-field col col-sm12 col-md-6 col-lg-l6">
                 <input id="icon_email" type="tel" className="validate" />
                 <IoLogoModelS className="icones"></IoLogoModelS>
                 <label for="icon_email">Nome do Veículo</label>
@@ -55,24 +55,24 @@ const Cadastro = () => {
             </div>
 
             <div className="row">
-              <div className="input-field col s12 m6 l3">
+              <div className="input-field col col-sm12 col-md-6 col-lg-l3">
                 <input id="icon_cpf" type="text" className="validate" />
                 <MdModelTraining className="icones"></MdModelTraining>
                 <label for="icon_cpf">Modelo</label>
               </div>
-              <div className="input-field col s12 m6 l3">
+              <div className="input-field col col-sm12 col-md-6 col-lg-l3">
                 <input id="icon_phone" type="tel" className="validate" />
                 <GiCarSeat className="icones"></GiCarSeat>
                 <label for="icon_phone">Marca</label>
               </div>
 
-              <div className="input-field col s12 m6 l3">
+              <div className="input-field col-sm12 col-md-6 col-lg-l3">
                 <input id="icon_phone" type="tel" className="validate" />
                 <AiTwotoneCalendar className="icones"></AiTwotoneCalendar>
                 <label for="icon_phone">Ano</label>
               </div>
 
-              <div className="input-field col s12 m6 l3">
+              <div className="input-field col-sm12 col-md-6 col-lg-l3">
                 <input id="icon_phone" type="tel" className="validate" />
                 <GiMoneyStack className="icones"></GiMoneyStack>
                 <label for="icon_phone">Valor Estimado</label>
