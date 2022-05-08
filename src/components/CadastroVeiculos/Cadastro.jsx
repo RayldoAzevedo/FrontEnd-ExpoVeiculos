@@ -73,9 +73,9 @@ const Cadastro = () => {
               </div>
 
               <div className="input-field col-sm12 col-md-6 col-lg-3">
-                <input id="icon_phone" type="tel" className="validate" />
-                <GiMoneyStack className="icones"></GiMoneyStack>
-                <label for="icon_phone">Valor Estimado: </label>
+               <input id="icon_phone" type="tel" className="validate" />
+                <GiMoneyStack className="icones"></GiMoneyStack> Valor Estimado
+                <label for="icon_phone"> R$ </label>
               </div>
             </div>
 
