@@ -30,12 +30,12 @@ const Header = () => {
                 </td>
               </tr>
               </ul>
+              <ul id="nav-mobile" className="right hide-on-large-only menu-sm-md">             
+                    <li className="tdtr"><a href="./login"><FaUserCircle className=""/> <RiLoginBoxLine className=""/></a></li>                      
+              </ul>
 
               <ul id="nav-mobile" className="left hide-on-large-only menu-sm-md">             
                     <li className="tdtr"><a href="./add"><IoLogoModelS className=""/> <HiDocumentAdd className=""/></a></li>                         
-              </ul>
-              <ul id="nav-mobile" className="right hide-on-large-only menu-sm-md">             
-                    <li className="tdtr"><a href="./login"><FaUserCircle className=""/> <RiLoginBoxLine className=""/></a></li>                      
               </ul>
             </div>
         </nav>
