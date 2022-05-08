@@ -36,9 +36,12 @@ const ListVeiculos = () =>{
             });
           }, []);
         
-          if (!veiculos) return null;
-
-          console.log(veiculos);        
+          if (!veiculos) return null;    
+          
+          
+          {
+                apiService.excluirUsuarioById(index);
+          }
 
         return (
             <div className='corpo'>
@@ -49,6 +52,7 @@ const ListVeiculos = () =>{
                             
                                 {
                                 veiculos.map( (veiculo, index) => (
+
                                     <div className='col s12 m6 l3 mb-4 ' >
                                         
                                     <Card sx={{ maxWidth: 400 }} className= 'grey lighten-2' key={index}>
@@ -90,6 +94,8 @@ const ListVeiculos = () =>{
                                     </Card>                            
                             </div>
                                     ))}
+
+                                    
                     </div>
                 </div>
             </div>
