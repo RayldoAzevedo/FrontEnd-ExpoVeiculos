@@ -17,7 +17,7 @@ const Header = () => {
         <>       
         <nav className="logo">
           <div className="nav-wrapper cyan darken-4">
-            <spam href="#" className="brand-logo "><img width="150" height="150" src="logo.jpeg"/></spam>
+            <spam href="#" className="brand-logo "><img width="150" height="150" src="logo expo.jpeg"/></spam>
             <a href="#" data-target="slide" className="sidenav-trigger show-large" ><i className="material-icons">menu</i></a>
             <ul id="nav-mobile" className="right hide-on-med-and-down menu">
               <tr>

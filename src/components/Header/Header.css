@@ -5,6 +5,10 @@
     align-items: center;
     
 }
+img{
+    border-radius: 50%;
+    margin: 10px;
+}
 .icons{
     font-size: 1.7em;
 }
