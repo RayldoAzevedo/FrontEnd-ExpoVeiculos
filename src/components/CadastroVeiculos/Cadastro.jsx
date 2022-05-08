@@ -25,8 +25,8 @@ const Cadastro = () => {
 
   return (
     <div className="corpo">
-      <Grid className="container ">
-        <div className="card w-25 titulo teal lighten-2 col col-sm-12 col-md6 col-lg-6">
+      <Grid className="container">
+        <div className="card w-25 titulo teal lighten-2 col col-sm-12 col-md6 col-lg-6 info">
           Cadastre seu veículo
         </div>
       </Grid>
@@ -75,7 +75,7 @@ const Cadastro = () => {
               <div className="input-field col-sm12 col-md-6 col-lg-3">
                 <input id="icon_phone" type="tel" className="validate" />
                 <GiMoneyStack className="icones"></GiMoneyStack>
-                <label for="icon_phone">Valor Estimado</label>
+                <label for="icon_phone">Valor Estimado: </label>
               </div>
             </div>
 
