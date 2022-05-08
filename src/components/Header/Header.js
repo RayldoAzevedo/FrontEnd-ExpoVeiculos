@@ -1,20 +1,36 @@
 import React from "react";
+import {RiLoginBoxLine} from 'react-icons/ri'
+import {FaUserCircle} from 'react-icons/fa'
+import { GiCarSeat } from "react-icons/gi";
+import { IoLogoModelS } from "react-icons/io";
+import { HiDocumentAdd } from "react-icons/hi";
+
+import './Header.css'
 
 
 
 const Header = () => {
+
+
+
     return(
         <>       
-        <nav>
-             <div className="nav-wrapper cyan darken-4">
-               <spam href="#" className="brand-logo "><img width="150" height="150" src="logo.jpeg"/></spam>
-               <a href="#" data-target="slide" className="sidenav-trigger show-large" ><i className="material-icons">menu</i></a>
-               <ul id="nav-mobile" className="right hide-on-med-and-down">
-                 <li><a href="./login">Login</a></li>
-                 <li><a href="./add">Adicionar Veículo</a></li>
-                 </ul>
-               </div>
-           </nav>
+        <nav className="logo">
+          <div className="nav-wrapper cyan darken-4">
+            <spam href="#" className="brand-logo "><img width="150" height="150" src="logo.jpeg"/></spam>
+            <a href="#" data-target="slide" className="sidenav-trigger show-large" ><i className="material-icons">menu</i></a>
+            <ul id="nav-mobile" className="right hide-on-med-and-down menu">
+              <tr>
+                <td >
+                    <li className="tdtr"><a href="./login"><FaUserCircle className="icons"/> Login <RiLoginBoxLine className="icons"/></a></li>                  
+                </td>
+                <td>
+                    <li className="tdtr"><a href="./add"><IoLogoModelS className="icons"/> Add Veículo <HiDocumentAdd className="icons"/></a></li>
+                </td>
+              </tr>
+              </ul>
+            </div>
+        </nav>
    
            <ul id="slide" className="sidenav">
                <li>

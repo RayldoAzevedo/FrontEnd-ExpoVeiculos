@@ -1,0 +1,27 @@
+.logo{
+    height: 120px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.icons{
+    font-size: 1.7em;
+}
+.tdtr{
+    border: solid 0.5px;
+    border-collapse: collapse;
+    border-radius: 50px;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.menu{
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    border: solid 0.5px;
+}

@@ -1,7 +1,11 @@
 import React from "react";
-import Button from "@mui/material/Button";
+import { Container, Button, TextField, Grid } from "@mui/material";
 
-import { AiTwotoneCalendar, AiOutlineSend, AiOutlineRollback } from "react-icons/ai";
+import {
+  AiTwotoneCalendar,
+  AiOutlineSend,
+  AiOutlineRollback,
+} from "react-icons/ai";
 import { IoLogoModelS } from "react-icons/io";
 import { MdModelTraining } from "react-icons/md";
 import { GiMoneyStack } from "react-icons/gi";
@@ -10,15 +14,32 @@ import { GiCarSeat } from "react-icons/gi";
 import "./Cadastro.css";
 
 const Cadastro = () => {
+
+  const saveVeiculo = (e) => {
+    
+    alert("Usuário Salvo!");
+  };
+
+  //modifica o valor do state do campo alterado
+  // const onChange = (e) => {};
+
   return (
     <div className="corpo">
-      <div className="container">
-        <div className="card w-25 titulo teal lighten-2">Cadastre seu veículo</div>
-      </div>
-      {/* <!-- formulario --> */}
+      <Grid className="container">
+        <div className="card w-25 titulo teal lighten-2">
+          Cadastre seu veículo
+        </div>
+      </Grid>
+
       <div className="container my-5">
         <div className="card darken-1 p-4 formulario">
-          <form action="form-veiculo">
+          {/* <!-- formulario --> */}
+          <form
+            action="form-veiculo"
+            method="post"
+            name="form-veiculo"
+            id="form-veiculo"
+          >
             <div className="row">
               <div className="input-field col s12 m6 l6">
                 <input id="icon_prefix" type="text" className="validate" />
@@ -56,20 +77,36 @@ const Cadastro = () => {
                 <GiMoneyStack className="icones"></GiMoneyStack>
                 <label for="icon_phone">Valor Estimado</label>
               </div>
-              
             </div>
+
+            
+
+            {/* action BUTTONS */}
             <div className="row">
-            <div className="col s12 m6 l6">
-                <Button variant="contained" color="success">
-                  Salvar&nbsp;&nbsp;&nbsp;<AiOutlineSend className="icones"></AiOutlineSend>
+              <div className="col s12 m6 l6">
+                <Button 
+                  variant="contained" 
+                  color="error"
+                  disableElevation
+                  onClick={(e) => {
+                      saveVeiculo(e);
+                    }}
+                  >
+                  Salvar
+                  &nbsp;&nbsp;&nbsp;
+                  <AiOutlineSend className="icones"></AiOutlineSend>
                 </Button>
               </div>
               <div className="col s12 m6 l6">
-                  <a href="./">
-                    <Button variant="contained" color="success">
-                    Voltar&nbsp;&nbsp;&nbsp;<AiOutlineRollback className="icones"></AiOutlineRollback>
-                    </Button>
-                  </a>
+                <a href="./">
+                  <Button
+                    variant="contained"
+                    color="error"
+                    
+                  >
+                    Voltar
+                  </Button>
+                </a>
               </div>
             </div>
           </form>

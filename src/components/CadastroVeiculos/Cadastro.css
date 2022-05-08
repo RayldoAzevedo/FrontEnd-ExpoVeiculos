@@ -1,5 +1,6 @@
 .icones{
     font-size: 25px;
+    color: rgb(90, 139, 102);
 }
 .corpo{
     background-color: rgb(55, 55, 55);
@@ -7,11 +8,15 @@
 }
 
 .formulario{
-    box-shadow: 10px 8px 8px aliceblue;
+    box-shadow: 10px 8px rgb(70, 80, 90);
+}
+
+a{
+    text-decoration: none;
 }
 
 .titulo{
-    box-shadow: 10px 8px 8px aliceblue;
+    box-shadow: 10px 8px rgb(70, 80, 90);
     color: white;
     text-align: center;
     font-size: 1.7em;
