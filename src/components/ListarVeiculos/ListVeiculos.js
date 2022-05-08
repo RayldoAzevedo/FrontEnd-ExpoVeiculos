@@ -64,8 +64,8 @@ const ListVeiculos = () =>{
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
 
-                                            <div class="card-content">
-                                                <label id='sobre' className='black-text'>{veiculo.sobre}</label><br></br>
+                                            <div class="card-content ">
+                                                <label id='sobre' className='black-text mb-3'>{veiculo.sobre}</label><br></br>
                                                 <div className='indigo lighten-5 p-2'>
                                                     <FaUserAstronaut className='icon'></FaUserAstronaut><span class="card-title black-text text-darken-4"> Proprietário: </span>
                                                     <label className='red-text'>{veiculo.proprietario}</label> <br></br>
