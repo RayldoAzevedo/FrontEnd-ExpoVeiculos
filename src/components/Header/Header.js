@@ -21,22 +21,25 @@ const Header = () => {
             <a href="#" data-target="slide" className="sidenav-trigger show-large" ></a>
 
             <ul id="nav-mobile" className="right hide-on-med-and-down menu">
-              <tr>
-                <td >
-                    <li className="tdtr"><a href="./login"><FaUserCircle className="icons"/> Login <RiLoginBoxLine className="icons"/></a></li>                  
-                </td>
-                <td>
-                    <li className="tdtr"><a href="./add"><IoLogoModelS className="icons"/> Add Veículo <HiDocumentAdd className="icons"/></a></li>
-                </td>
+              <tr >
+                  <td >
+                      <li className="tdtr"><a href="./login"><FaUserCircle className="icons"/> Login <RiLoginBoxLine className="icons"/></a></li>                  
+                  </td>
+                  <td >
+                      <li className="tdtr"><a href="./add"><IoLogoModelS className="icons"/> Add Veículo <HiDocumentAdd className="icons"/></a></li>
+                  </td>
               </tr>
-              </ul>
-              <ul id="nav-mobile" className="left hide-on-large-only menu-sm-md">             
-                    <li className="tdtr"><a href="./login"><FaUserCircle className=""/> <RiLoginBoxLine className=""/></a></li>                      
+
               </ul>
 
-              <ul id="nav-mobile" className="right hide-on-large-only menu-sm-md">             
-                    <li className="tdtr"><a href="./add"><IoLogoModelS className=""/> <HiDocumentAdd className=""/></a></li>                         
+              <ul id="nav-mobile" className="left hide-on-large-only menu-sm-md tr blue-grey darken-4">             
+                    <li className="tdtr"><a href="./login"><FaUserCircle className=""/> <RiLoginBoxLine className="icons"/></a></li>                      
               </ul>
+
+              <ul id="nav-mobile" className="right hide-on-large-only menu-sm-md tr blue-grey darken-4">             
+                    <li className="tdtr"><a href="./add"><IoLogoModelS className=""/> <HiDocumentAdd className="icons"/></a></li>                         
+              </ul>
+
             </div>
         </nav>
        </>

@@ -16,6 +16,10 @@
     border: solid 0.5px;
     border-collapse: collapse;
     border-radius: 50px;
+    
+}
+.tr{
+    border-radius: 50px;
 }
 
 
