@@ -36,13 +36,7 @@ const ListVeiculos = () =>{
             });
           }, []);
         
-          if (!veiculos) return null;    
-          
-          
-          {
-                apiService.excluirUsuarioById(index);
-          }
-
+          if (!veiculos) return null;  
         return (
             <div className='corpo'>
                 <div className='container'>
