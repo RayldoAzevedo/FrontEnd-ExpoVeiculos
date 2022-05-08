@@ -25,8 +25,8 @@ const Cadastro = () => {
 
   return (
     <div className="corpo">
-      <Grid className="container">
-        <div className="card w-25 titulo teal lighten-2">
+      <Grid className="container ">
+        <div className="card w-25 titulo teal lighten-2 col col-sm-12 col-md6 col-lg-6">
           Cadastre seu veículo
         </div>
       </Grid>
