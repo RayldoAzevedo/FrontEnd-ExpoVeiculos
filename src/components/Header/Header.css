@@ -2,8 +2,7 @@
     height: 120px;
     margin-bottom: 20px;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;    
 }
 .img{
     border-radius: 50%;
@@ -16,7 +15,6 @@
     border: solid 0.5px;
     border-collapse: collapse;
     border-radius: 50px;
-    
 }
 .tr{
     border-radius: 50px;
@@ -28,7 +26,6 @@ a{
 }
 
 .menu{
-
     margin-top: 10px;
     margin-right: 10px;
     border-radius: 15px;
