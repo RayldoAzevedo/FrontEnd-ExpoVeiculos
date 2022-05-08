@@ -19,6 +19,7 @@ const Header = () => {
           <div className="nav-wrapper cyan darken-4">
             <spam href="#" className="brand-logo "><img width="150" height="150" src="logo expo.jpeg"/></spam>
             <a href="#" data-target="slide" className="sidenav-trigger show-large" ></a>
+
             <ul id="nav-mobile" className="right hide-on-med-and-down menu">
               <tr>
                 <td >
@@ -30,7 +31,7 @@ const Header = () => {
               </tr>
               </ul>
 
-              <ul id="nav-mobile" className="right hide-on-large-only menu-sm-md">             
+              <ul id="nav-mobile" className="left hide-on-large-only menu-sm-md">             
                     <li className="tdtr"><a href="./add"><IoLogoModelS className=""/> <HiDocumentAdd className=""/></a></li>                         
               </ul>
               <ul id="nav-mobile" className="right hide-on-large-only menu-sm-md">             
