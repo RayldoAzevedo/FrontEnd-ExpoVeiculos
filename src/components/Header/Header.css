@@ -24,6 +24,7 @@ a{
 }
 
 .menu{
+
     margin-top: 10px;
     margin-right: 10px;
     border-radius: 15px;
@@ -31,7 +32,8 @@ a{
 }
 
 .menu-sm-md{
-    margin-top: 10px;
+
+    margin-top: 25px;
     margin-right: 10px;
     border-radius: 15px;
     border: solid 0.5px;
