@@ -47,7 +47,7 @@ const ListVeiculos = () =>{
                                 {
                                 veiculos.map( (veiculo, index) => (
 
-                                    <div className='col s12 m6 l3 mb-4 ' >
+                                    <div className='col col-sm-12 col-md-6 col-lg-3 mb-4 ' >
                                         
                                     <Card sx={{ maxWidth: 400 }} className= 'grey lighten-2' key={index}>
                                     <CardActionArea>
