@@ -89,18 +89,6 @@ const Cadastro = () => {
     <div className="corpo row">
   
         <div className="row border cyan darken-4 ms-3 rounded-pill">
-          
-              <div className="input-field campo-link col-sm-12 col-md-12 col-lg-6 w-75 ms-5">
-                <input
-                  onChange={handleLink}
-                  id="link"
-                  name="imagem"
-                  type="text"
-                  className="mt-5"
-                />
-                <AiOutlineLink className="icones"></AiOutlineLink>
-                <label for="icon_prefix" className="mt-5 ms-3">link da Imagem</label>            
-              </div>
 
           <div className="col-sm-12 col-md-12 col-lg-6 darken-1 imagem m-auto">
             <img className="img" src={link} width="100px" height="100px" />
@@ -121,8 +109,21 @@ const Cadastro = () => {
             name="form-veiculo"
             id="fomr-veiculo"
           >
+
+              <div className="input-field campo-link col-sm-12 col-md-12 col-lg-12 w-75 m-auto mb-4">
+                <input
+                  onChange={handleLink}
+                  id="link"
+                  name="imagem"
+                  type="text"
+                  className="mt-5"
+                />
+                <AiOutlineLink className="icones"></AiOutlineLink>
+                <label for="icon_prefix" className="mt-5 ms-3">link da Imagem</label>            
+              </div>
+
             <div className="row">
-              <div className="input-field col col-sm12 col-md-6 col-lg-l6">
+              <div className="input-field col col-sm12 col-md-6 col-lg-l6 mt-4">
                 <input
                   onChange={handleUser}
                   id="icon_prefix"
@@ -134,7 +135,7 @@ const Cadastro = () => {
                 <label for="icon_prefix">Proprietário</label>
               </div>
 
-              <div className="input-field col col-sm12 col-md-6 col-lg-l6">
+              <div className="input-field col col-sm12 col-md-6 col-lg-l6 mt-4">
                 <input
                   onChange={handleModel}
                   id="veiculo"
