@@ -201,6 +201,7 @@ const Cadastro = () => {
                 ></textarea> */}
                 <GiCarSeat className="icones m-3"></GiCarSeat>
                 <TextField
+                  onChange={handleSobre}
                   sx={'width: 400px'}
                   placeholder="Informações importantes"
                   multiline
