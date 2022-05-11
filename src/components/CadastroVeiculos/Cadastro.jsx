@@ -97,7 +97,7 @@ const Cadastro = () => {
       <div className="container">
         <div className=" row">
           <div className=" card col col-sm-4 col-md-4 col-lg-4 darken-1 link">
-            <div className="input-field col col-sm12 col-md-6 col-lg-l6 campo-link">
+            <div className="input-field col col-sm12 col-md-6 col-lg-l8 campo-link">
               <input
                 onChange={handleLink}
                 id="link"
@@ -144,7 +144,7 @@ const Cadastro = () => {
                   onChange={handleModel}
                   id="veiculo"
                   name="descricao"
-                  type="tel"
+                  type="text"
                   className="validate"
                 />
                 <IoLogoModelS className="icones"></IoLogoModelS>
