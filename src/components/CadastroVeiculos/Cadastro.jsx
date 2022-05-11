@@ -13,7 +13,6 @@ import { GiMoneyStack } from "react-icons/gi";
 import { FaUserAstronaut } from "react-icons/fa";
 import { GiCarSeat } from "react-icons/gi";
 import "./Cadastro.css";
-import { Link } from "react-router-dom";
 
 const Cadastro = () => {
   // imagem
@@ -88,11 +87,6 @@ const Cadastro = () => {
 
   return (
     <div className="corpo row">
-      {/* <Grid className="container row ms-4">
-        <div className="card w-25 titulo teal lighten-2 col col-sm-12 col-md6 col-lg-6 info">
-          Adicione um Veículo
-        </div>
-      </Grid> */}
 
       <div className="container">
         <div className="row border flex justify-beteween cyan darken-4 ms-3 rounded-pill">
