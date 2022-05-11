@@ -30,9 +30,7 @@ const ListVeiculos = () =>{
 
         useEffect(() => {
             apiService.listarVeiculos().then((response) => {
-                setVeiculo(response.data).catch((err) => {
-                    console.error("ops! Erro ao listar veiculos" + err);
-                });
+                setVeiculo(response.data);
             });
           }, []);
         
