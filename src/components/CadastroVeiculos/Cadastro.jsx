@@ -96,7 +96,7 @@ const Cadastro = () => {
 
       <div className="container">
         <div className=" row">
-          <div className=" card col col-sm-4 col-md-4 col-lg-4 darken-1 link">
+          <div className=" card col col-sm-12 col-md-4 col-lg-4 darken-1 link">
             <div className="input-field col col-sm12 col-md-6 col-lg-l8 campo-link">
               <input
                 onChange={handleLink}
@@ -110,7 +110,7 @@ const Cadastro = () => {
             </div>
           </div>
 
-          <div className="card col col-sm-4 col-md-4 col-lg-4 darken-1 ms-4 imagem">
+          <div className="card col col-sm-12 col-md-4 col-lg-4 darken-1 ms-4 imagem">
             <img className="img" src={link} width="100px" height="100px" />
           </div>
         </div>
