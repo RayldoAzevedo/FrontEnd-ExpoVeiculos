@@ -5,29 +5,13 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const PagesHome = () => (
-
-  <div className="">
-    <table>
-
-      <tr>
-        <td>
-          <Header />
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <ListVeiculos />
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <Footer/>
-        </td>
-      </tr>
-    </table>
-  </div>
+  
+    <div className="row">
+      <div className="row"><Header /></div>
+      <div className="row"><ListVeiculos /></div>
+      <div className="row"><Footer /></div>
+    </div>
+ 
 );
 
 export default PagesHome;

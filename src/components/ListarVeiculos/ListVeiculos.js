@@ -40,7 +40,7 @@ const ListVeiculos = () =>{
         return (
             <div className='corpo'>
                 <div className='container'>
-                    <div class="row ">     
+                    <div className="row ">     
                            
                             {/* CARTAO DE EXIBIÇÃO COM MATERIAL UI */}
                             
@@ -64,7 +64,7 @@ const ListVeiculos = () =>{
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
 
-                                            <div class="card-content ">
+                                            <div className="card-content ">
                                                 <label id='sobre' className='black-text mb-3'>{veiculo.sobre}</label><br></br>
                                                 <div className='indigo lighten-5 p-2'>
                                                     <FaUserAstronaut className='icon'></FaUserAstronaut><span class="card-title black-text text-darken-4"> Proprietário: </span>

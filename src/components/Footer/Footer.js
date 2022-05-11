@@ -30,13 +30,13 @@ const Footer = () => {
                   </h5>
                 </a>
               </div>
-              <div class="col s4 l4 s12">
-                <h5 class="white-text">Links de Contato</h5>
+              <div className="col s4 l4 s12">
+                <h5 className="white-text">Links de Contato</h5>
                 <ul>
                   <div className="col s2 m2 l2">
                     <li>
                       <a
-                        class="grey-text text-lighten-3"
+                        className="grey-text text-lighten-3"
                         href="https://www.instagram.com/rayrayazevedo/"
                       >
                         <FaInstagram className="icon-size"></FaInstagram>
@@ -44,7 +44,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        class="grey-text text-lighten-3"
+                        className="grey-text text-lighten-3"
                         href="https://www.facebook.com/rayldoazevedo"
                       >
                         <FaFacebook className="icon-size"></FaFacebook>
@@ -54,7 +54,7 @@ const Footer = () => {
                   <div className="col s2 m2 l2">
                     <li>
                       <a
-                        class="grey-text text-lighten-3"
+                        className="grey-text text-lighten-3"
                         href="https://github.com/Rayzev"
                       >
                         <FaGithub className="icon-size"></FaGithub>
@@ -63,7 +63,7 @@ const Footer = () => {
                     </li>
                     <li className="">
                       <a
-                        class="grey-text text-lighten-3 vercel"
+                        className="grey-text text-lighten-3 vercel"
                         href="https://vercel.com/"
                       >
                         Vercel

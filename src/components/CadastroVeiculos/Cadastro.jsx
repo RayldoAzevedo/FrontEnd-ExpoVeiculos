@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Button, TextField, Grid } from "@mui/material";
+import apiService from '../../service/apiService'
 
 import {
   AiTwotoneCalendar,
@@ -15,10 +16,36 @@ import "./Cadastro.css";
 
 const Cadastro = () => {
 
+  const [proprietario, setProprietario] = useState();
+  // const [modelo, setModelo] = useState();
+  // const [marca, setMarca] = useState();
+  // const [ano, setAno] = useState();
+  // const [valor, setValor] = useState();
+  // const [veiculo, setVeiculo] = useState(['']);
+
+  const handleProprietario = (event)=> {
+    setProprietario = EventTarget.value;
+    console.log('digitando algo:');
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Formulário enviando dados');
+    console.log('1', proprietario);
+  }
+
   const saveVeiculo = (e) => {
-    
+
     alert("Usuário Salvo!");
   };
+
+  
+
+  // useEffect ( ()=> {
+  //     apiService.salvarVeiculo().then( (response)=> {
+  //         setVeiculo(response.data)
+  //     });
+  // }, []);
 
   //modifica o valor do state do campo alterado
   // const onChange = (e) => {};
@@ -27,7 +54,7 @@ const Cadastro = () => {
     <div className="corpo">
       <Grid className="container">
         <div className="card w-25 titulo teal lighten-2 col col-sm-12 col-md6 col-lg-6 info">
-          Cadastre seu veículo
+          Adicione um Veículo
         </div>
       </Grid>
 
@@ -35,6 +62,7 @@ const Cadastro = () => {
         <div className="card darken-1 p-4 formulario">
           {/* <!-- formulario --> */}
           <form
+            onSubmit={handleSubmit}
             action="form-veiculo"
             method="post"
             name="form-veiculo"
@@ -42,13 +70,18 @@ const Cadastro = () => {
           >
             <div className="row">
               <div className="input-field col col-sm12 col-md-6 col-lg-l6">
-                <input id="icon_prefix" type="text" className="validate" />
+                <input
+                    onChange={handleProprietario} 
+                    id="icon_prefix" 
+                    name="proprietario" 
+                    type="text" 
+                    className="validate" />
                 <FaUserAstronaut className="icones"></FaUserAstronaut>
                 <label for="icon_prefix">Proprietário</label>
               </div>
 
               <div className="input-field col col-sm12 col-md-6 col-lg-l6">
-                <input id="icon_email" type="tel" className="validate" />
+                <input id="veiculo" name="descricao" type="tel" className="validate" />
                 <IoLogoModelS className="icones"></IoLogoModelS>
                 <label for="icon_email">Nome do Veículo</label>
               </div>
@@ -56,24 +89,24 @@ const Cadastro = () => {
 
             <div className="row">
               <div className="input-field col col-sm12 col-md-6 col-lg-3 mt-3">
-                <input id="icon_cpf" type="text" className="validate" />
+                <input id="modelo" name="modelo" type="text" className="validate" />
                 <MdModelTraining className="icones"></MdModelTraining>
                 <label for="icon_cpf">Modelo</label>
               </div>
               <div className="input-field col col-sm12 col-md-6 col-lg-3 mt-3">
-                <input id="icon_phone" type="tel" className="validate" />
+                <input id="marca" name="marca" type="tel" className="validate" />
                 <GiCarSeat className="icones"></GiCarSeat>
                 <label for="icon_phone">Marca</label>
               </div>
 
               <div className="input-field col-sm12 col-md-6 col-lg-3 mt-3">
-                <input id="icon_phone" type="tel" className="validate" />
+                <input id="ano" name="ano" type="tel" className="validate" />
                 <AiTwotoneCalendar className="icones"></AiTwotoneCalendar>
                 <label for="icon_phone">Ano</label>
               </div>
 
               <div className="input-field col-sm12 col-md-6 col-lg-3 mt-3">
-               <input id="icon_phone" type="tel" className="validate" />
+               <input id="valor" name="valor" type="tel" className="validate" />
                 <GiMoneyStack className="icones"></GiMoneyStack> Valor Estimado
                 <label for="icon_phone"> R$ </label>
               </div>

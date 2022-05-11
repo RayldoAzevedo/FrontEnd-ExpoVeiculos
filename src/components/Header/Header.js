@@ -17,20 +17,13 @@ const Header = () => {
         <>       
         <nav className="logo">
           <div className="nav-wrapper cyan darken-4">
-            <spam href="#" className="brand-logo "><img className="img" width="150" height="150" src="logo expo.jpeg"/></spam>
+            <span href="#" className="brand-logo "><img className="img" width="150" height="150" src="expologo.jpeg"/></span>
             <a href="#" data-target="slide" className="sidenav-trigger show-large" ></a>
 
-            <ul id="nav-mobile" className="right hide-on-med-and-down menu">
-              <tr >
-                  <td >
-                      <li className="tdtr"><a href="./login"><FaUserCircle className="icons"/> Login <RiLoginBoxLine className="icons"/></a></li>                  
-                  </td>
-                  <td >
-                      <li className="tdtr"><a href="./add"><IoLogoModelS className="icons"/> Add Veículo <HiDocumentAdd className="icons"/></a></li>
-                  </td>
-              </tr>
-
-              </ul>
+            <ul id="nav-mobile" className="right hide-on-med-and-down menu">                
+                <li className="tdtr m-1"><a href="./login"><FaUserCircle className="icons"/> Login <RiLoginBoxLine className="icons"/></a></li>                  
+                <li className="tdtr m-1"><a href="./add"><IoLogoModelS className="icons"/> Add Veículo <HiDocumentAdd className="icons"/></a></li>
+            </ul>
 
               <ul id="nav-mobile" className="left hide-on-large-only menu-sm-md tr blue-grey darken-4">             
                     <li className="tdtr"><a href="./login"><FaUserCircle className=""/> <RiLoginBoxLine className="icons"/></a></li>                      
