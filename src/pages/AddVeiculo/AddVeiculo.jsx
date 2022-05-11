@@ -5,17 +5,19 @@ import Header from "../../components/Header/Header";
 
 const AddVeiculo = () => {
   return (
-    <>
-    <div className="add">
-      <Header/>
+
+    <div className="row">
+        <div className="add row">
+          <Header/>
+        </div>
+        <div className="add row">
+          <Cadastro/>
+        </div>
+        <div className="row">
+          <Footer/>
+        </div>
     </div>
-    <div className="add">
-      <Cadastro/>
-    </div>
-    <div>
-      <Footer/>
-    </div>
-    </>
+   
   );
 };
 

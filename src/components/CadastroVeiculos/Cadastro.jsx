@@ -51,14 +51,14 @@ const Cadastro = () => {
   // const onChange = (e) => {};
 
   return (
-    <div className="corpo">
-      <Grid className="container">
+    <div className="corpo row">
+      <Grid className="container row ms-4">
         <div className="card w-25 titulo teal lighten-2 col col-sm-12 col-md6 col-lg-6 info">
           Adicione um Veículo
         </div>
       </Grid>
 
-      <div className="container my-5">
+      <div className="container ms-2">
         <div className="card darken-1 p-4 formulario">
           {/* <!-- formulario --> */}
           <form
