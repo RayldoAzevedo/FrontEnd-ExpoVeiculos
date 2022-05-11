@@ -87,30 +87,28 @@ const Cadastro = () => {
 
   return (
     <div className="corpo row">
+  
+        <div className="row border cyan darken-4 ms-3 rounded-pill">
+          
+              <div className="input-field campo-link col-sm-12 col-md-12 col-lg-6 w-75 ms-5">
+                <input
+                  onChange={handleLink}
+                  id="link"
+                  name="imagem"
+                  type="text"
+                  className=""
+                />
+                <AiOutlineLink className="icones"></AiOutlineLink>
+                <label for="icon_prefix">link da Imagem</label>            
+              </div>
 
-      <div className="container">
-        <div className="row border flex justify-beteween cyan darken-4 ms-3 rounded-pill">
-
-          <div className="card col col-sm-12 col-md-6 col-lg-8 darken-1 link mt-3 ms-5 me-5">
-            <div className="input-field campo-link">
-              <input
-                onChange={handleLink}
-                id="link"
-                name="imagem"
-                type="text"
-                className=""
-              />
-              <AiOutlineLink className="icones"></AiOutlineLink>
-              <label for="icon_prefix">link da Imagem</label>
-            </div>
-          </div>
-
-          <div className=" col col-sm-12 col-md-6 col-lg-4 darken-1 ms-4 imagem">
+          <div className="col-sm-12 col-md-12 col-lg-6 darken-1 imagem m-auto">
             <img className="img" src={link} width="100px" height="100px" />
           </div>
 
         </div>
-      </div>
+
+    
 
       <div className="container ms-2">
         <div className="card darken-1 p-4 formulario">
