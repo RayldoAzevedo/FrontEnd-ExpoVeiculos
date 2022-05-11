@@ -16,36 +16,63 @@ import "./Cadastro.css";
 
 const Cadastro = () => {
 
-  const [proprietario, setProprietario] = useState();
-  // const [modelo, setModelo] = useState();
-  // const [marca, setMarca] = useState();
-  // const [ano, setAno] = useState();
-  // const [valor, setValor] = useState();
-  // const [veiculo, setVeiculo] = useState(['']);
+  const [user, setUser] = useState();
+  const [model, setModel] = useState();
+  const [mark, setMark] = useState();
+  const [year, setYear] = useState();
+  const [val, setVal] = useState();
+  const [veiculo, setVeiculo] = useState({});
 
-  const handleProprietario = (event)=> {
-    setProprietario = EventTarget.value;
-    console.log('digitando algo:');
+  const handleUser = (e)=> {
+    setUser(e.target.value);
+    console.log('User:' + e.target.value);
+  }
+  const handleMark = (e)=> {
+    setMark(e.target.value);
+    console.log('Marca:' + e.target.value);
+  }
+  const handleModel = (e)=> {
+    setModel(e.target.value);
+    console.log('Modelo:' + e.target.value);
+  }
+  const handleYear = (e)=> {
+    setYear(e.target.value);
+    console.log('Ano:' + e.target.value);
+  }
+  const handleVal = (e)=> {
+    setVal(e.target.value);
+    console.log('Valor:' + e.target.value);
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e)=> {
+    
+    setVeiculo({
+      proprietario: user,
+      modelo: model,
+      marca: mark,
+      ano: year,
+      valor: val
+    })
+
+    console.log('Formulário enviando dados: '+ veiculo);
     e.preventDefault();
-    console.log('Formulário enviando dados');
-    console.log('1', proprietario);
-  }
+    
+  };
 
   const saveVeiculo = (e) => {
 
-    alert("Usuário Salvo!");
+   
+
+    console.log("parametro" , e + "veiculo: ", veiculo);
   };
 
   
 
-  // useEffect ( ()=> {
-  //     apiService.salvarVeiculo().then( (response)=> {
-  //         setVeiculo(response.data)
-  //     });
-  // }, []);
+  useEffect ( ()=> {
+      apiService.salvarVeiculo().then( (response)=> {
+          setVeiculo(response.data)
+      });
+  }, [handleSubmit]);
 
   //modifica o valor do state do campo alterado
   // const onChange = (e) => {};
@@ -63,15 +90,15 @@ const Cadastro = () => {
           {/* <!-- formulario --> */}
           <form
             onSubmit={handleSubmit}
-            action="form-veiculo"
+            action="incluir-veiculo"
             method="post"
             name="form-veiculo"
-            id="form-veiculo"
+            id="fomr-veiculo"
           >
             <div className="row">
               <div className="input-field col col-sm12 col-md-6 col-lg-l6">
                 <input
-                    onChange={handleProprietario} 
+                    onChange={handleUser} 
                     id="icon_prefix" 
                     name="proprietario" 
                     type="text" 
@@ -81,7 +108,9 @@ const Cadastro = () => {
               </div>
 
               <div className="input-field col col-sm12 col-md-6 col-lg-l6">
-                <input id="veiculo" name="descricao" type="tel" className="validate" />
+                <input 
+                    onChange={handleMark}
+                    id="veiculo" name="descricao" type="tel" className="validate" />
                 <IoLogoModelS className="icones"></IoLogoModelS>
                 <label for="icon_email">Nome do Veículo</label>
               </div>
@@ -89,24 +118,37 @@ const Cadastro = () => {
 
             <div className="row">
               <div className="input-field col col-sm12 col-md-6 col-lg-3 mt-3">
-                <input id="modelo" name="modelo" type="text" className="validate" />
+                <input 
+                    id="modelo"
+                    onChange={handleModel} 
+                    name="modelo" 
+                    type="text" 
+                    className="validate" />
                 <MdModelTraining className="icones"></MdModelTraining>
                 <label for="icon_cpf">Modelo</label>
               </div>
+
               <div className="input-field col col-sm12 col-md-6 col-lg-3 mt-3">
-                <input id="marca" name="marca" type="tel" className="validate" />
+                <input id="sobre" name="sobre" type="tel" className="validate" />
                 <GiCarSeat className="icones"></GiCarSeat>
-                <label for="icon_phone">Marca</label>
+                <label for="sobre">Sobre</label>
               </div>
 
               <div className="input-field col-sm12 col-md-6 col-lg-3 mt-3">
-                <input id="ano" name="ano" type="tel" className="validate" />
+                <input 
+                    id="ano"
+                    onChange={handleYear} 
+                    name="ano" type="tel" 
+                    className="validate" />
                 <AiTwotoneCalendar className="icones"></AiTwotoneCalendar>
                 <label for="icon_phone">Ano</label>
               </div>
 
               <div className="input-field col-sm12 col-md-6 col-lg-3 mt-3">
-               <input id="valor" name="valor" type="tel" className="validate" />
+               <input 
+                  id="valor" 
+                  onChange={handleVal}
+                  name="valor" type="number" className="validate" />
                 <GiMoneyStack className="icones"></GiMoneyStack> Valor Estimado
                 <label for="icon_phone"> R$ </label>
               </div>
@@ -118,10 +160,11 @@ const Cadastro = () => {
             <div className="row">
               <div className="col s12 m6 l6">
                 <Button 
+                  type="onSubmit"
                   variant="contained" 
                   color="error"
                   disableElevation
-                  onClick={(e) => {
+                  onClick={ (e) => {
                       saveVeiculo(e);
                     }}
                   >
