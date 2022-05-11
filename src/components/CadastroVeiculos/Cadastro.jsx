@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Container, Button, TextField, Grid } from "@mui/material";
-import apiService from '../../service/apiService'
+import { Button, Grid, TextField } from "@mui/material";
+import apiService from "../../service/apiService";
 
 import {
   AiTwotoneCalendar,
   AiOutlineSend,
-  AiOutlineRollback,
+  AiOutlineLink,
 } from "react-icons/ai";
 import { IoLogoModelS } from "react-icons/io";
 import { MdModelTraining } from "react-icons/md";
@@ -13,77 +13,98 @@ import { GiMoneyStack } from "react-icons/gi";
 import { FaUserAstronaut } from "react-icons/fa";
 import { GiCarSeat } from "react-icons/gi";
 import "./Cadastro.css";
+import { width } from "@mui/system";
 
 const Cadastro = () => {
+  // imagem
+  const [link, setLink] = useState(
+    "https://s3.sa-east-1.amazonaws.com/expo.veiculos/WhatsApp+Image+2022-05-09+at+11.24.51.jpeg"
+  );
+  // campos
+  const [proprietario, setProprietario] = useState();
+  const [modelo, setModelo] = useState();
+  const [marca, setMarca] = useState();
+  const [ano, setAno] = useState();
+  const [valor, setValor] = useState();
+  const [sobre, setSobre] = useState();
+  // objeto
+  const [veiculo, setVeiculo] = useState([]);
 
-  const [user, setUser] = useState();
-  const [model, setModel] = useState();
-  const [mark, setMark] = useState();
-  const [year, setYear] = useState();
-  const [val, setVal] = useState();
-  const [veiculo, setVeiculo] = useState({});
+  // carregando os valores dos campor nas variaveis
+  const handleUser = (e) => {
+    setProprietario(e.target.value);
+  };
+  const handleMark = (e) => {
+    setMarca(e.target.value);
+  };
+  const handleModel = (e) => {
+    setModelo(e.target.value);
+  };
+  const handleYear = (e) => {
+    setAno(e.target.value);
+  };
+  const handleSobre = (e) => {
+    setSobre(e.target.value);
+  };
+  const handleVal = (e) => {
+    setValor(e.target.value);
+  };
 
-  const handleUser = (e)=> {
-    setUser(e.target.value);
-    console.log('User:' + e.target.value);
-  }
-  const handleMark = (e)=> {
-    setMark(e.target.value);
-    console.log('Marca:' + e.target.value);
-  }
-  const handleModel = (e)=> {
-    setModel(e.target.value);
-    console.log('Modelo:' + e.target.value);
-  }
-  const handleYear = (e)=> {
-    setYear(e.target.value);
-    console.log('Ano:' + e.target.value);
-  }
-  const handleVal = (e)=> {
-    setVal(e.target.value);
-    console.log('Valor:' + e.target.value);
-  }
+  const handleLink = (e) => {
+    setLink(e.target.value);
+  };
 
-  const handleSubmit = (e)=> {
-    
+  // METODO QUE TRATA O ENVIO DOS DADOS PARA A API
+  const handleSubmit = (event) => {
+    event.preventDefault();
     setVeiculo({
-      proprietario: user,
-      modelo: model,
-      marca: mark,
-      ano: year,
-      valor: val
-    })
-
-    console.log('Formulário enviando dados: '+ veiculo);
-    e.preventDefault();
-    
+      foto: link,
+      proprietario,
+      modelo,
+      marca,
+      ano,
+      sobre,
+      valorEstimado: valor,
+    });
   };
 
-  const saveVeiculo = (e) => {
-
-   
-
-    console.log("parametro" , e + "veiculo: ", veiculo);
-  };
-
-  
-
-  useEffect ( ()=> {
-      apiService.salvarVeiculo().then( (response)=> {
-          setVeiculo(response.data)
+  useEffect(() => {
+    if (veiculo.length !== 0) {
+      apiService.salvarVeiculo(veiculo).then((res) => {
+        console.log("veiculo: ", res);
       });
-  }, [handleSubmit]);
-
-  //modifica o valor do state do campo alterado
-  // const onChange = (e) => {};
+    }
+  }, [veiculo]);
 
   return (
     <div className="corpo row">
-      <Grid className="container row ms-4">
+      {/* <Grid className="container row ms-4">
         <div className="card w-25 titulo teal lighten-2 col col-sm-12 col-md6 col-lg-6 info">
           Adicione um Veículo
         </div>
-      </Grid>
+      </Grid> */}
+
+      <div className="container">
+        <div className=" row">
+          <div className=" card col col-sm-4 col-md-4 col-lg-4 darken-1 link">
+            <div className="input-field col col-sm12 col-md-6 col-lg-l6 campo-link">
+              <input
+                onChange={handleLink}
+                id="link"
+                name="imagem"
+                type="text"
+                className=""
+              />
+              <AiOutlineLink className="icones"></AiOutlineLink>
+              <label for="icon_prefix">link da Imagem</label>
+            </div>
+          </div>
+
+          <div className="card col col-sm-4 col-md-4 col-lg-4 darken-1 ms-4 imagem">
+            <img className="img" src={link} width="100px" height="100px" />
+          </div>
+        </div>
+      </div>
 
       <div className="container ms-2">
         <div className="card darken-1 p-4 formulario">
@@ -98,88 +119,108 @@ const Cadastro = () => {
             <div className="row">
               <div className="input-field col col-sm12 col-md-6 col-lg-l6">
                 <input
-                    onChange={handleUser} 
-                    id="icon_prefix" 
-                    name="proprietario" 
-                    type="text" 
-                    className="validate" />
+                  onChange={handleUser}
+                  id="icon_prefix"
+                  name="proprietario"
+                  type="text"
+                  className="validate"
+                />
                 <FaUserAstronaut className="icones"></FaUserAstronaut>
                 <label for="icon_prefix">Proprietário</label>
               </div>
 
               <div className="input-field col col-sm12 col-md-6 col-lg-l6">
-                <input 
-                    onChange={handleMark}
-                    id="veiculo" name="descricao" type="tel" className="validate" />
+                <input
+                  onChange={handleModel}
+                  id="veiculo"
+                  name="descricao"
+                  type="tel"
+                  className="validate"
+                />
                 <IoLogoModelS className="icones"></IoLogoModelS>
-                <label for="icon_email">Nome do Veículo</label>
+                <label for="icon_email">Modelo</label>
               </div>
             </div>
 
             <div className="row">
-              <div className="input-field col col-sm12 col-md-6 col-lg-3 mt-3">
-                <input 
-                    id="modelo"
-                    onChange={handleModel} 
-                    name="modelo" 
-                    type="text" 
-                    className="validate" />
+              <div className="input-field col col-sm12 col-md-5 col-lg-4 mt-3">
+                <input
+                  id="modelo"
+                  onChange={handleMark}
+                  name="modelo"
+                  type="text"
+                  className="validate"
+                />
                 <MdModelTraining className="icones"></MdModelTraining>
-                <label for="icon_cpf">Modelo</label>
+                <label for="icon_cpf">Marca</label>
               </div>
 
-              <div className="input-field col col-sm12 col-md-6 col-lg-3 mt-3">
-                <input id="sobre" name="sobre" type="tel" className="validate" />
-                <GiCarSeat className="icones"></GiCarSeat>
-                <label for="sobre">Sobre</label>
-              </div>
-
-              <div className="input-field col-sm12 col-md-6 col-lg-3 mt-3">
-                <input 
-                    id="ano"
-                    onChange={handleYear} 
-                    name="ano" type="tel" 
-                    className="validate" />
+              <div className="input-field col-sm12 col-md-3 offset-md3 offset-lg-4 col-lg-2 mt-3">
+                <input
+                  id="ano"
+                  onChange={handleYear}
+                  name="ano"
+                  type="number"
+                  className="validate"
+                />
                 <AiTwotoneCalendar className="icones"></AiTwotoneCalendar>
                 <label for="icon_phone">Ano</label>
               </div>
 
-              <div className="input-field col-sm12 col-md-6 col-lg-3 mt-3">
-               <input 
-                  id="valor" 
+              <div className="input-field col-sm12 col-md-6 col-lg-6 mt-3">
+                <input
+                  id="valor"
                   onChange={handleVal}
-                  name="valor" type="number" className="validate" />
+                  name="valor"
+                  type="number"
+                  className="validate"
+                />
                 <GiMoneyStack className="icones"></GiMoneyStack> Valor Estimado
                 <label for="icon_phone"> R$ </label>
               </div>
+
+              <div className="input-field col col-sm12 col-md-6 col-lg-6 mt-3">
+                {/* <textarea
+                  id="sobre"
+                  rows="10"
+                  cols="5"
+                  onChange={handleSobre}
+                  name="sobre"
+                  type="tel"
+                  className="validate"
+                ></textarea> */}
+                <GiCarSeat className="icones m-3"></GiCarSeat>
+                <TextField
+                  sx={'width: 400px'}
+                  placeholder="Informações importantes"
+                  multiline
+                  rows={2}
+                  maxRows={4}
+                />
+                
+              </div>
             </div>
 
-            
+            {/* onClick={ (e) => {
+                    saveVeiculo(e);
+                  }} */}
 
             {/* action BUTTONS */}
             <div className="row">
               <div className="col s12 m6 l6">
-                <Button 
+                <Button
                   type="onSubmit"
-                  variant="contained" 
+                  variant="contained"
                   color="error"
                   disableElevation
-                  onClick={ (e) => {
-                      saveVeiculo(e);
-                    }}
-                  >
-                  Salvar
-                  &nbsp;&nbsp;&nbsp;
+                >
+                  Salvar &nbsp;&nbsp;&nbsp;
                   <AiOutlineSend className="icones"></AiOutlineSend>
                 </Button>
               </div>
               <div className="col s12 m6 l6">
                 <a href="./">
-                  <Button
-                    variant="contained"
-                    color="error"
-                    
-                  >
+                  <Button variant="contained" color="error">
                     Voltar
                   </Button>
                 </a>

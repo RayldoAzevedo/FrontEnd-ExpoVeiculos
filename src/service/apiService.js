@@ -28,7 +28,7 @@ consultarVeiculoById(veiculoId) {
 * @returns{Promise<AxiosResponse<any>>}
 */
 salvarVeiculo(veiculo) {
-    return axios.post(VEICULO_API_BASE_URL + '/salvar-veiculo' , veiculo);
+    return axios.post(VEICULO_API_BASE_URL + '/incluir-veiculo' , veiculo);
 
 }
 

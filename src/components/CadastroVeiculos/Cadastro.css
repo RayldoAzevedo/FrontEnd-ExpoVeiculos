@@ -3,7 +3,8 @@
     color: rgb(90, 139, 102);
 }
 .corpo{
-    background-color: rgb(55, 55, 55);
+    background-color: rgb(55, 55, 55) !important;
+    background-image: none;
     padding: 20px;
 }
 
@@ -31,4 +32,24 @@ a{
     font-size: 1.7em;
     font-weight: bold;
     margin-top: 20px;
+}
+
+.link{
+    width: 20%;
+    margin-left: 20px;
+    height: 100px;
+}
+
+.campo-link{
+    width: 100%;
+    
+}
+
+.imagem{
+    width: auto;
+    padding: 0;
+    border-radius: 50%;
+}
+.img{
+    border-radius: 50%;
 }
