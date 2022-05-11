@@ -95,9 +95,10 @@ const Cadastro = () => {
       </Grid> */}
 
       <div className="container">
-        <div className=" row">
-          <div className=" card col col-sm-12 col-md-4 col-lg-4 darken-1 link">
-            <div className="input-field col col-sm12 col-md-6 col-lg-l8 campo-link">
+        <div className="row border flex justify-beteween cyan darken-4 ms-3 rounded-pill">
+
+          <div className="card col col-sm-12 col-md-6 col-lg-8 darken-1 link mt-3 ms-5 me-5">
+            <div className="input-field campo-link">
               <input
                 onChange={handleLink}
                 id="link"
@@ -110,9 +111,10 @@ const Cadastro = () => {
             </div>
           </div>
 
-          <div className="card col col-sm-12 col-md-4 col-lg-4 darken-1 ms-4 imagem">
+          <div className=" col col-sm-12 col-md-6 col-lg-4 darken-1 ms-4 imagem">
             <img className="img" src={link} width="100px" height="100px" />
           </div>
+
         </div>
       </div>
 
