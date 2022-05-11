@@ -96,10 +96,10 @@ const Cadastro = () => {
                   id="link"
                   name="imagem"
                   type="text"
-                  className=""
+                  className="mt-5"
                 />
                 <AiOutlineLink className="icones"></AiOutlineLink>
-                <label for="icon_prefix">link da Imagem</label>            
+                <label for="icon_prefix" className="mt-5 ms-3">link da Imagem</label>            
               </div>
 
           <div className="col-sm-12 col-md-12 col-lg-6 darken-1 imagem m-auto">
@@ -111,6 +111,7 @@ const Cadastro = () => {
     
 
       <div className="container ms-2">
+
         <div className="card darken-1 p-4 formulario">
           {/* <!-- formulario --> */}
           <form
@@ -183,7 +184,7 @@ const Cadastro = () => {
                 <label for="icon_phone"> R$ </label>
               </div>
 
-              <div className="input-field col col-sm12 col-md-6 col-lg-6 mt-3">
+              <div className="col col-sm12 col-md-6 col-lg-6 mt-3">
                 {/* <textarea
                   id="sobre"
                   rows="10"
@@ -195,20 +196,17 @@ const Cadastro = () => {
                 ></textarea> */}
                 <GiCarSeat className="icones m-3"></GiCarSeat>
                 <TextField
+                className="border-primary"
                   onChange={handleSobre}
-                  sx={'width: 400px'}
+                  sx={'margin: auto'}
                   placeholder="Informações importantes"
                   multiline
-                  rows={2}
-                  maxRows={4}
+                  rows={5}
+                  maxRows={8}
                 />
                 
               </div>
             </div>
-
-            {/* onClick={ (e) => {
-                    saveVeiculo(e);
-                  }} */}
 
             {/* action BUTTONS */}
             <div className="row">
