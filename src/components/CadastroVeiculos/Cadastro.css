@@ -3,7 +3,7 @@
     color: rgb(90, 139, 102);
 }
 .corpo{
-    background-color: rgb(55, 55, 55) !important;
+    background-color: rgb(138, 138, 130) !important;
     background-image: none;
     padding: 20px;
 }
@@ -23,7 +23,7 @@ a{
 }
 
 .titulo{
-    box-shadow: 10px 8px rgb(70, 80, 90);
+    box-shadow: 10px 8px rgb(138, 138, 130);
     color: white;
     text-align: center;
     font-size: 1.7em;
