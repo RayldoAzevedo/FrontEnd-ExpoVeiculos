@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Grid, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import apiService from "../../service/apiService";
 
 import {
@@ -13,7 +13,7 @@ import { GiMoneyStack } from "react-icons/gi";
 import { FaUserAstronaut } from "react-icons/fa";
 import { GiCarSeat } from "react-icons/gi";
 import "./Cadastro.css";
-import { width } from "@mui/system";
+import { Link } from "react-router-dom";
 
 const Cadastro = () => {
   // imagem
@@ -73,6 +73,16 @@ const Cadastro = () => {
       apiService.salvarVeiculo(veiculo).then((res) => {
         console.log("veiculo: ", res);
       });
+
+      alert("usuário adicionado com sucesso!")
+      setProprietario('');
+      setAno('');
+      setLink('');
+      setMarca('');
+      setModelo('');
+      setValor('');
+      setSobre('');
+      
     }
   }, [veiculo]);
 

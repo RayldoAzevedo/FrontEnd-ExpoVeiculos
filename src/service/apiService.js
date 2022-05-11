@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const VEICULO_API_BASE_URL = 'http://api-expoveiculos.herokuapp.com';
+const VEICULO_API_BASE_URL = 'https://api-expoveiculos.herokuapp.com';
 // const VEICULO_API_BASE_URL = 'http://localhost:8090';
 
 class ApiService {
