@@ -19,6 +19,7 @@ const Cadastro = () => {
   const [link, setLink] = useState(
     "https://s3.sa-east-1.amazonaws.com/expo.veiculos/WhatsApp+Image+2022-05-09+at+11.24.51.jpeg"
   );
+
   // campos
   const [proprietario, setProprietario] = useState();
   const [modelo, setModelo] = useState();
@@ -56,6 +57,29 @@ const Cadastro = () => {
   // METODO QUE TRATA O ENVIO DOS DADOS PARA A API
   const handleSubmit = (event) => {
     event.preventDefault();
+    if(!link.trim()){
+      console.log('veiculo sem foto')
+    }
+ 
+    if(!proprietario.trim()){
+      console.log('campo nome esta vazio')
+      return
+    }
+      if(!modelo.trim()){
+        console.log('campo Modelo esta vazio')
+        return
+    }
+    
+    if(!marca.trim()){
+      console.log('campo Marca esta vazio')
+      return
+    }
+  
+    if(!ano.trim()){
+      console.log('campo Ano esta vazio')
+      return
+    }
+
     setVeiculo({
       foto: link,
       proprietario,
@@ -65,24 +89,17 @@ const Cadastro = () => {
       sobre,
       valorEstimado: valor,
     });
+
+    
+
   };
 
   useEffect(() => {
-    if (veiculo.length !== 0) {
       apiService.salvarVeiculo(veiculo).then((res) => {
         console.log("veiculo: ", res);
+        return setVeiculo([])
       });
 
-      alert("usuário adicionado com sucesso!")
-      setProprietario('');
-      setAno('');
-      setLink('');
-      setMarca('');
-      setModelo('');
-      setValor('');
-      setSobre('');
-      
-    }
   }, [veiculo]);
 
   return (
