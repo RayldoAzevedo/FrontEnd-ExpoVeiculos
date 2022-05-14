@@ -21,7 +21,9 @@ const Cadastro = () => {
 
 
   function handleClick() {
-
+      if(veiculo === []){
+          alert('Por favor informe os dados!')
+      }
   }
 
   // imagem
@@ -107,7 +109,6 @@ const Cadastro = () => {
   useEffect(() => {
     apiService.salvarVeiculo(veiculo).then((res) => {
       console.log("veiculo: ", res);
-      // history.pushState('/')
       setProprietario('');
       setAno('');
       setLink("https://s3.sa-east-1.amazonaws.com/expo.veiculos/WhatsApp+Image+2022-05-09+at+11.24.51.jpeg");
@@ -117,6 +118,7 @@ const Cadastro = () => {
       setSobre('');
       setValor('');
       setVeiculo([])
+
       alert(" SALVO com sucesso! ")
       history.push('/home')
       window.location.reload()

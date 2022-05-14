@@ -5,10 +5,7 @@ import { IoLogoModelS } from "react-icons/io";
 import { HiDocumentAdd } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
-
 import './Header.css'
-
-
 
 const Header = () => {
 
