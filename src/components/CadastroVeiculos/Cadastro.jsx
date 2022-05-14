@@ -21,7 +21,10 @@ const Cadastro = () => {
 
 
   function handleClick() {
-
+        console.log(veiculo)
+        if(veiculo == []){
+          alert("Informe os Dados")
+        }
   }
 
   // imagem
