@@ -15,19 +15,6 @@ const ListVeiculos = () =>{
 
         const [ veiculos, setVeiculo] = useState([]);
 
-        // useEffect(() => {
-        //     async function fetchVeiculo() {
-        //       // You can await here
-        //       const response = await fetch(apiService.listarVeiculos());
-              
-        //       const data = await response.json();
-        //       setVeiculo(data);
-        //     }
-        //     //chamando o metodo
-        //     fetchVeiculo();
-            
-        //   }, []);
-
         useEffect(() => {
             apiService.listarVeiculos().then((response) => {
                 setVeiculo(response.data);

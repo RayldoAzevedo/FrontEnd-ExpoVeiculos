@@ -13,7 +13,6 @@ export default {
     googleLogar: async () => {
         const provider = new firebase.auth.GooleAuthProvider();
         let result = await firebase.auth().signInWithPopup(provider);
-
         return result;
     }
 }

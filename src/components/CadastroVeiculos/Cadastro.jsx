@@ -14,15 +14,15 @@ import { GiMoneyStack } from "react-icons/gi";
 import { FaUserAstronaut } from "react-icons/fa";
 import { GiCarSeat } from "react-icons/gi";
 import "./Cadastro.css";
-import { useHistory } from "react-router-dom";
+import history from "../../service/history";
 
 
 const Cadastro = () => {   
-    const hystory = useHistory();
+  
 
     function handleClick() {
       alert(" SALVO com sucesso! ")
-      hystory.push('/')
+       
     }
     
   // imagem
@@ -102,7 +102,7 @@ const Cadastro = () => {
       valorEstimado: valor,
     });   
 
-    
+    return history.push('/home');
   };
 
   
