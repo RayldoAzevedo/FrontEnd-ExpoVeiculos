@@ -8,14 +8,22 @@ import { FiShare, } from 'react-icons/fi'
 import { useState, useEffect } from 'react'
 import apiService from '../../service/apiService'
 import DeleteIcon from '@mui/icons-material/Delete';
-import AddVeiculo from '../../pages/AddVeiculo/AddVeiculo'
 
 import { Button, CardActionArea, CardActions, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import './ListVeiculos.css'
 
 
-
 const ListVeiculos = () => {
+
+    const handleKeyAlterar = (id)=>{
+        console.log(id)
+    }
+
+    const handleKeyDelete = (id)=>{
+        apiService.excluirVeiculoById(id).then(()=>{
+            console.log(`Deletado Veiculo ${id}`)
+        })
+    }
 
     const [veiculos, setVeiculo] = useState([]);
 
@@ -43,14 +51,15 @@ const ListVeiculos = () => {
         <div className='corpo'>
             <div className='container'>
                 <div className="row ">
-                    <a href={AddVeiculo}>
-                        {/* CARTAO DE EXIBIÇÃO COM MATERIAL UI */}
+                    {/* CARTAO DE EXIBIÇÃO COM MATERIAL UI */}
+                    {
 
-                        {
-                            veiculos.map((veiculo, index) => (
+                        veiculos.map((veiculo, index) => (
 
-                                <div className='col col-sm-12 col-md-6 col-lg-3 mb-4 ' >
-
+                            <div className='col col-sm-12 col-md-6 col-lg-3 mb-4 ' >
+                                <a href='/'
+                                   onClick={()=>{handleKeyAlterar(veiculo.idVeiculo)}}
+                                >
                                     <Card sx={{ maxWidth: 400 }} className='grey lighten-2' key={index}>
                                         <CardActionArea>
                                             <CardMedia
@@ -59,10 +68,6 @@ const ListVeiculos = () => {
                                                 image={veiculo.foto}
                                                 alt="expo-veiculos"
                                                 className='mt-2'
-                                                onClick={(ids) => {
-                                                    const selectedIDs = new Set(ids);
-                                                    this.setIDs(selectedIDs)
-                                                }}
                                             />
                                             <CardContent>
                                                 <Typography gutterBottom variant="h5" component="div">
@@ -90,15 +95,14 @@ const ListVeiculos = () => {
                                             <Button variant="contained" color="error">
                                                 Compartilhar&nbsp;&nbsp;&nbsp;<FiShare className="icones"></FiShare>
                                             </Button>
-                                            <Button variant="contained" color="error" startIcon={<DeleteIcon />}>
+                                            <Button variant="contained" color="error" startIcon={<DeleteIcon />} onClick={()=>{handleKeyDelete(veiculo.idVeiculo)}}>
                                                 Excluir
                                             </Button>
                                         </CardActions>
                                     </Card>
-                                </div>
-
-                            ))}
-                    </a>
+                                </a>
+                            </div>
+                        ))}
 
                 </div>
             </div>

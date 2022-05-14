@@ -17,14 +17,13 @@ import "./Cadastro.css";
 import history from "../../service/history";
 
 
-const Cadastro = () => {   
-  
+const Cadastro = () => {
 
-    function handleClick() {
-      alert(" SALVO com sucesso! ")
-       
-    }
-    
+
+  function handleClick() {
+
+  }
+
   // imagem
   const [link, setLink] = useState(
     "https://s3.sa-east-1.amazonaws.com/expo.veiculos/WhatsApp+Image+2022-05-09+at+11.24.51.jpeg"
@@ -69,25 +68,25 @@ const Cadastro = () => {
     event.preventDefault();
 
 
-    if(!link.trim()){
+    if (!link.trim()) {
       console.log('veiculo sem foto')
     }
- 
-    if(!proprietario.trim()){
+
+    if (!proprietario.trim()) {
       console.log('campo nome esta vazio')
       return
     }
-      if(!modelo.trim()){
-        console.log('campo Modelo esta vazio')
-        return
+    if (!modelo.trim()) {
+      console.log('campo Modelo esta vazio')
+      return
     }
-    
-    if(!marca.trim()){
+
+    if (!marca.trim()) {
       console.log('campo Marca esta vazio')
       return
     }
-  
-    if(!ano.trim()){
+
+    if (!ano.trim()) {
       console.log('campo Ano esta vazio')
       return
     }
@@ -100,43 +99,44 @@ const Cadastro = () => {
       ano,
       sobre,
       valorEstimado: valor,
-    });   
-
-    return history.push('/home');
+    });
   };
 
-  
+
 
   useEffect(() => {
-      apiService.salvarVeiculo(veiculo).then((res) => {
-        console.log("veiculo: ", res);
-        // history.pushState('/')
-        setProprietario('');
-        setAno('');
-        setLink("https://s3.sa-east-1.amazonaws.com/expo.veiculos/WhatsApp+Image+2022-05-09+at+11.24.51.jpeg");
-        setMarca('');
-        setModelo('');
-        setProprietario('');
-        setSobre('');
-        setValor('');
-        setVeiculo([])
-        return setVeiculo([])
-      });
+    apiService.salvarVeiculo(veiculo).then((res) => {
+      console.log("veiculo: ", res);
+      // history.pushState('/')
+      setProprietario('');
+      setAno('');
+      setLink("https://s3.sa-east-1.amazonaws.com/expo.veiculos/WhatsApp+Image+2022-05-09+at+11.24.51.jpeg");
+      setMarca('');
+      setModelo('');
+      setProprietario('');
+      setSobre('');
+      setValor('');
+      setVeiculo([])
+      alert(" SALVO com sucesso! ")
+      history.push('/home')
+      window.location.reload()
+      return setVeiculo([])
+    });
 
   }, [veiculo]);
 
   return (
     <div className="corpo row">
-  
-        <div className="row border cyan darken-4 ms-3 rounded-pill">
 
-          <div className="col-sm-12 col-md-12 col-lg-6 darken-1 imagem m-auto">
-            <img className="img" src={link} width="100px" height="100px" />
-          </div>
+      <div className="row border cyan darken-4 ms-3 rounded-pill">
 
+        <div className="col-sm-12 col-md-12 col-lg-6 darken-1 imagem m-auto">
+          <img className="img" src={link} width="100px" height="100px" />
         </div>
 
-    
+      </div>
+
+
 
       <div className="container ms-2">
 
@@ -150,17 +150,17 @@ const Cadastro = () => {
             id="fomr-veiculo"
           >
 
-              <div className="input-field campo-link col-sm-12 col-md-12 col-lg-12 w-75 m-auto mb-4">
-                <input
-                  onChange={handleLink}
-                  id="link"
-                  name="imagem"
-                  type="text"
-                  className="mt-5"
-                />
-                <AiOutlineLink className="icones"></AiOutlineLink>
-                <label for="icon_prefix" className="mt-5 ms-3">link da Imagem</label>            
-              </div>
+            <div className="input-field campo-link col-sm-12 col-md-12 col-lg-12 w-75 m-auto mb-4">
+              <input
+                onChange={handleLink}
+                id="link"
+                name="imagem"
+                type="text"
+                className="mt-5"
+              />
+              <AiOutlineLink className="icones"></AiOutlineLink>
+              <label for="icon_prefix" className="mt-5 ms-3">link da Imagem</label>
+            </div>
 
             <div className="row">
               <div className="input-field col col-sm12 col-md-6 col-lg-l6 mt-4">
@@ -242,7 +242,7 @@ const Cadastro = () => {
                 ></textarea> */}
                 <GiCarSeat className="icones m-3"></GiCarSeat>
                 <TextField
-                className="border-primary"
+                  className="border-primary"
                   onChange={handleSobre}
                   sx={'margin: auto'}
                   placeholder="Informações importantes"
@@ -251,7 +251,7 @@ const Cadastro = () => {
                   maxRows={8}
                   value={sobre}
                 />
-                
+
               </div>
             </div>
 
@@ -264,7 +264,7 @@ const Cadastro = () => {
                   color="error"
                   disableElevation
                   onClick={handleClick}
-                  
+
                 >
                   Salvar &nbsp;&nbsp;&nbsp;
                   <AiOutlineSend className="icones"></AiOutlineSend>
