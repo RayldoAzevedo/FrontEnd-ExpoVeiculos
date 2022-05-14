@@ -15,7 +15,6 @@ import './ListVeiculos.css'
 
 
 
-
 const ListVeiculos = () => {
 
     const [veiculos, setVeiculo] = useState([]);

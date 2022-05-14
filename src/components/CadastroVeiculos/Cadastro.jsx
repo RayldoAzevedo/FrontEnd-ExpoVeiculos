@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, TextField } from "@mui/material";
 import apiService from "../../service/apiService";
 
+
 import {
   AiTwotoneCalendar,
   AiOutlineSend,
@@ -13,15 +14,24 @@ import { GiMoneyStack } from "react-icons/gi";
 import { FaUserAstronaut } from "react-icons/fa";
 import { GiCarSeat } from "react-icons/gi";
 import "./Cadastro.css";
+import history from "../../service/history";
 
-const Cadastro = () => {
+
+const Cadastro = () => {   
+  
+
+    function handleClick() {
+      alert(" SALVO com sucesso! ")
+       
+    }
+    
   // imagem
   const [link, setLink] = useState(
     "https://s3.sa-east-1.amazonaws.com/expo.veiculos/WhatsApp+Image+2022-05-09+at+11.24.51.jpeg"
   );
 
   // campos
-  const [proprietario, setProprietario] = useState();
+  const [proprietario, setProprietario] = useState('');
   const [modelo, setModelo] = useState();
   const [marca, setMarca] = useState();
   const [ano, setAno] = useState();
@@ -57,6 +67,8 @@ const Cadastro = () => {
   // METODO QUE TRATA O ENVIO DOS DADOS PARA A API
   const handleSubmit = (event) => {
     event.preventDefault();
+
+
     if(!link.trim()){
       console.log('veiculo sem foto')
     }
@@ -88,15 +100,26 @@ const Cadastro = () => {
       ano,
       sobre,
       valorEstimado: valor,
-    });
+    });   
 
-    
-
+    return history.push('/home');
   };
+
+  
 
   useEffect(() => {
       apiService.salvarVeiculo(veiculo).then((res) => {
         console.log("veiculo: ", res);
+        // history.pushState('/')
+        setProprietario('');
+        setAno('');
+        setLink("https://s3.sa-east-1.amazonaws.com/expo.veiculos/WhatsApp+Image+2022-05-09+at+11.24.51.jpeg");
+        setMarca('');
+        setModelo('');
+        setProprietario('');
+        setSobre('');
+        setValor('');
+        setVeiculo([])
         return setVeiculo([])
       });
 
@@ -147,6 +170,7 @@ const Cadastro = () => {
                   name="proprietario"
                   type="text"
                   className="validate"
+                  value={proprietario}
                 />
                 <FaUserAstronaut className="icones"></FaUserAstronaut>
                 <label for="icon_prefix">Proprietário</label>
@@ -155,10 +179,11 @@ const Cadastro = () => {
               <div className="input-field col col-sm12 col-md-6 col-lg-l6 mt-4">
                 <input
                   onChange={handleModel}
-                  id="veiculo"
-                  name="descricao"
+                  id="modelo"
+                  name="modelo"
                   type="text"
                   className="validate"
+                  value={modelo}
                 />
                 <IoLogoModelS className="icones"></IoLogoModelS>
                 <label for="icon_email">Modelo</label>
@@ -168,11 +193,12 @@ const Cadastro = () => {
             <div className="row">
               <div className="input-field col col-sm12 col-md-5 col-lg-4 mt-3">
                 <input
-                  id="modelo"
+                  id="marca"
                   onChange={handleMark}
-                  name="modelo"
+                  name="marca"
                   type="text"
                   className="validate"
+                  value={marca}
                 />
                 <MdModelTraining className="icones"></MdModelTraining>
                 <label for="icon_cpf">Marca</label>
@@ -185,6 +211,7 @@ const Cadastro = () => {
                   name="ano"
                   type="number"
                   className="validate"
+                  value={ano}
                 />
                 <AiTwotoneCalendar className="icones"></AiTwotoneCalendar>
                 <label for="icon_phone">Ano</label>
@@ -197,6 +224,7 @@ const Cadastro = () => {
                   name="valor"
                   type="number"
                   className="validate"
+                  value={valor}
                 />
                 <GiMoneyStack className="icones"></GiMoneyStack> Valor Estimado
                 <label for="icon_phone"> R$ </label>
@@ -221,6 +249,7 @@ const Cadastro = () => {
                   multiline
                   rows={5}
                   maxRows={8}
+                  value={sobre}
                 />
                 
               </div>
@@ -234,6 +263,8 @@ const Cadastro = () => {
                   variant="contained"
                   color="error"
                   disableElevation
+                  onClick={handleClick}
+                  
                 >
                   Salvar &nbsp;&nbsp;&nbsp;
                   <AiOutlineSend className="icones"></AiOutlineSend>
